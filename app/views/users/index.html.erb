@@ -1,0 +1,28 @@
+<h1>Week 7 One2One</h1>
+<% @users.each do |user| %>
+  <div>
+    <div>
+      <%= image_tag user.picture, size: 250 %>
+    </div>
+    <div>
+      <%= user.name %>
+    </div>
+    <div>
+      <%= user.bio %>
+    </div>
+    <div>
+      Followers: <%= user.followers.count %>
+    </div>
+    <div>
+      Comments: <%= user.comments.count %>
+    </div>
+    <div>
+      <% user.comments.each do |comment| %>
+        <div>
+          <%= comment.body %> By <%= comment.user.name %>
+        </div>
+      <% end %>
+    </div>
+    <hr />
+  </div>
+<% end %>
